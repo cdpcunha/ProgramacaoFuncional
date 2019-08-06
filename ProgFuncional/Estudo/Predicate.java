@@ -3,6 +3,7 @@ package Estudo;
 import java.util.ArrayList;
 import java.util.List;
 
+import Entidades.EntPredicate;
 import Entidades.Produto;
 
 public class Predicate {
@@ -21,13 +22,27 @@ public class Predicate {
 		for (Produto x : listProd) {
 			System.out.println(x);
 		}
-
+		
+		listProd.removeIf(new EntPredicate());
 		System.out.println("--------------------------------------------------");
+		for (Produto x : listProd) {
+			System.out.println(x);
+		}
+		
+		listProd.removeIf(Produto::ProdutoPredicate);
+		
+		System.out.println("--------------------------------------------------");
+		for (Produto x : listProd) {
+			System.out.println(x);
+		}
+		
+		
+		/*System.out.println("--------------------------------------------------");
 
 		listProd.removeIf(p -> p.getPrecoProd() >= 100);
 		for (Produto x : listProd) {
 			System.out.println(x);
 		}
-	}
+	*/}
 
 }

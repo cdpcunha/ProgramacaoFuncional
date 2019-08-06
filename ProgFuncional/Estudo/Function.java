@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import Entidades.EntFunction;
 import Entidades.Produto;
 
 public class Function {
@@ -22,8 +23,22 @@ public class Function {
 		for(String p:listaAux) {
 			System.out.println(p);
 		}
+		System.out.println("------------------------------------------------------");
 		
+		
+		listaAux = listProd.stream().map(new EntFunction()).collect(Collectors.toList());
 
+		for(String p:listaAux) {
+			System.out.println(p);
+		}
+		System.out.println("------------------------------------------------------");
+		
+		listaAux = listProd.stream().map(Produto::ProdutoFunction).collect(Collectors.toList());
+		
+		for(String p:listaAux) {
+			System.out.println(p);
+		}
+		System.out.println("------------------------------------------------------");
 	}
 
 }

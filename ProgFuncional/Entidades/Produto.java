@@ -9,6 +9,23 @@ public class Produto {
 		this.nomeProd = nomeProd;
 		this.precoProd = precoProd;
 	}
+	
+	public boolean ProdutoPredicate() {
+		return this.getPrecoProd() >= 400;
+	}
+	
+	public boolean ProdutoPredicateSearch(String param) {
+		return getNomeProd().charAt(0) == param.charAt(0);
+	}
+	
+	public void ProdutoConsumer() {
+		this.setPrecoProd(this.getPrecoProd()*1.1); 
+	}
+	
+	public String ProdutoFunction() {
+		return this.getNomeProd().toUpperCase();
+	}
+	
 	public String getNomeProd() {
 		return nomeProd;
 	}

@@ -3,6 +3,7 @@ package Estudo;
 import java.util.ArrayList;
 import java.util.List;
 
+import Entidades.EntConsumer;
 import Entidades.Produto;
 
 public class Consumer {
@@ -16,7 +17,14 @@ public class Consumer {
 		listProd.add(new Produto("Celular", 590.90));
 		listProd.add(new Produto("Bateria 110v", 88.50));
 		
-		listProd.forEach(p -> p.setPrecoProd(p.getPrecoProd()*1.1));
+		//listProd.forEach(p -> p.setPrecoProd(p.getPrecoProd()*1.1));
+		
+		listProd.forEach(new EntConsumer());
+		for(Produto x:listProd) {
+			System.out.println(x);
+		}
+		System.out.println("------------------------------------------------");
+		listProd.forEach(Produto::ProdutoConsumer);
 		
 		for(Produto x:listProd) {
 			System.out.println(x);

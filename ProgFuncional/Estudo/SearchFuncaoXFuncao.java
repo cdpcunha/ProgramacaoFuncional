@@ -27,6 +27,13 @@ public class SearchFuncaoXFuncao {
 		
 		String search = sc.nextLine();
 		
+		for(Produto x:listProd) {
+			if(x.ProdutoPredicateSearch(search)) {
+				System.out.println(x);
+			};
+			
+		}
+		System.out.println("-------------------------------------------------");
 		ps.procuraProd(listProd, x -> x.getNomeProd().charAt(0) == search.charAt(0));
 				
 		sc.close();
